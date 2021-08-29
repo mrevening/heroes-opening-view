@@ -1,24 +1,21 @@
-import logo from './logo.svg';
 import './App.css';
+import { useReducer } from 'react' ;
+import Button from './Button'
+import NewGameView from './NewGameView'
+
 
 function App() {
+  const [showNewGame, toggleShowNewGame] = useReducer(showNewGame => !showNewGame, false);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <> 
+    <Button text="NewGame" action={toggleShowNewGame} />
+    { showNewGame && <NewGameView closeAction={toggleShowNewGame}/> }
+    <div>High Scores</div>
+    <div>Credits</div>
+    <div>Load Game</div>
+    <div>Quit</div>
+    </>
   );
 }
 
