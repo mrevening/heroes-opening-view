@@ -8,14 +8,14 @@ import Opponents from './Opponents';
 export default function NewGameView({ closeAction }) {
     const [difficulty, setDifficulty] = useState(0);
     return(
-        <>
-        <Scenario />
-        <GameDifficulty setDifficulty={setDifficulty}/>
-        <Opponents />
-        <HeroClass />
-        <Button text="OKAY" action = {closeAction} />
-        <div>{ 100 + difficulty*20 }%</div>
-        <Button text="CANCEL" action = {closeAction} />
-        </>
+        <div className="pane-view" >
+            <Scenario />
+            <GameDifficulty setDifficulty={setDifficulty}/>
+            <Opponents />
+            <HeroClass />
+            <Button text="OKAY" action = {closeAction} />
+            <div>{ 100 + difficulty*20 }%</div>
+            <Button text="CANCEL" action = {closeAction} />
+        </div>
     );
 } 

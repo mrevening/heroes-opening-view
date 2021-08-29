@@ -1,0 +1,22 @@
+[
+    {
+        "name": "Grim Reaper",
+        "opponents": 
+        [
+            { "onlyComputer": true,  "color": "blue"},
+            { "onlyComputer": false, "color": "green" },
+            { "onlyComputer": false, "color": "red" },
+            { "onlyComputer": false, "color": "yellow" },
+            { "onlyComputer": false, "color": "orange" },
+            { "onlyComputer": false, "color": "purple" }
+        ]
+    },
+    {
+        "name": "Good vs. Evil",
+        "opponents": 
+        [
+            { "onlyComputer": true,  "color": "blue"},
+            { "onlyComputer": false, "color": "green" }
+        ]
+    }
+]
