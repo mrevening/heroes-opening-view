@@ -4,7 +4,7 @@ import Scenario from './Scenario';
 import GameDifficulty from './GameDifficulty';
 import HeroClass from './HeroClass';
 import Opponents from './Opponents';
-import { setScenarios } from './actions';
+import { setScenarios, setScenarioSettings } from './actions';
 import { useDispatch } from 'react-redux';
 
 export default function NewGameView({ closeAction }) {
@@ -12,7 +12,7 @@ export default function NewGameView({ closeAction }) {
     const dispatch = useDispatch();
 
     useEffect(() => { 
-        fetch("scenarios.json").then(res => res.json()).then(json => dispatch(setScenarios(json))).catch(console.error);
+        fetch("scenarios.json").then(res => res.json()).then(json => { dispatch(setScenarios(json)); dispatch(setScenarioSettings(json[0])); }).catch(console.error);
       }, []);
 
     return(

@@ -1,4 +1,4 @@
-export const scenarioSettings = scenarioSettings => ({
+export const setScenarioSettings = scenarioSettings => ({
     type: 'SET_SCENARIO_SETTINGS',
     payload: { scenarioSettings },
 });

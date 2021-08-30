@@ -1,9 +1,8 @@
 import Button from './Button';
 import { useSelector, useDispatch } from 'react-redux';
-import { scenarioSettings } from './actions';
-// import FilterScenarioSize from './FilterScenarioSize';
 import { getScenarios } from './selectors';
 import { useState } from 'react';
+import { setScenarioSettings } from './actions';
 
 export default function ShowScenarios({ closeAction }){
     const buttons = ["S", "M", "L", "X-L", ];
@@ -21,7 +20,7 @@ export default function ShowScenarios({ closeAction }){
 
         <div>Scenario List:</div>
         <ul>
-            {scenarios?.filter(sizeFilter).map((scenario, i) => <li key={i}><button  onClick={() => dispatch(scenarioSettings(scenario))}>{scenario.name} {scenario.size}</button></li>)}
+            {scenarios?.filter(sizeFilter).map((scenario, i) => <li key={i}><button  onClick={() => dispatch(setScenarioSettings(scenario))}>{scenario.name} {scenario.size}</button></li>)}
         </ul>
         <Button text="OKAY" action={closeAction} />
         </>
