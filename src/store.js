@@ -1,10 +1,10 @@
 import { createStore, combineReducers } from 'redux';
-import { numberOfClicksReducer } from './reducers';
 import { scenarioSettingsReducer } from './reducers';
+import { scenariosReducer } from './reducers';
 
 const rootReducer = combineReducers({
-    numberOfClicks: numberOfClicksReducer,
     scenarioSettings: scenarioSettingsReducer,
+    scenarios: scenariosReducer
 });
 
 export const store = createStore(rootReducer);
