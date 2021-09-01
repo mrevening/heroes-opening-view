@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
+import { Button, Modal, ModalBody, ModalFooter } from 'reactstrap';
 import { getScenarios } from './selectors';
 import { setScenarioSettings } from './actions';
 
@@ -14,7 +14,6 @@ export default function ShowScenarios({ isOpen, toggle }){
     return (
         <>
         <Modal isOpen={isOpen} toggle={toggle} fade={false} backdrop={false}>
-            <ModalHeader toggle={toggle}>Modal title</ModalHeader>
             <ModalBody>
                 <div className="horizontalBlocks">
                     { buttons.map((button, i) =><button key={i} onClick={() =>setScenarioSize(button)} >{button}</button>)}

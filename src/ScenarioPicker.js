@@ -14,8 +14,8 @@ export default function Scenario(){
         <div className="text-center">Scenario:</div>
         <Row>
             <Col></Col>
-            <Col className="text-center">{scenarioName}</Col>
-            <Col className="float-right"><Button onClick={toggleShowScenarios}>SELECT</Button></Col>
+            <Col className="d-flex justify-content-center align-items-center">{scenarioName}</Col>
+            <Col className="d-flex justify-content-end"><Button onClick={toggleShowScenarios}>SELECT</Button></Col>
         </Row>         
         <ShowScenarios isOpen={showScenarios} toggle={toggleShowScenarios} />
         </>

@@ -8,7 +8,7 @@ import HeroClass from './HeroClass';
 import Opponents from './Opponents';
 
 function NewGameView({ isOpen, toggle }) {
-    const [difficulty, setDifficulty] = useState(0);
+    const [difficulty, setDifficulty] = useState(1);
     const dispatch = useDispatch();
 
     useEffect(() => { 
@@ -17,10 +17,10 @@ function NewGameView({ isOpen, toggle }) {
 
     return(
         <>
-        <Modal isOpen={isOpen} toggle={toggle} fade={false} backdrop={false} returnFocusAfterClose={false}>
+        <Modal isOpen={isOpen} toggle={toggle} fade={false} backdrop={false} returnFocusAfterClose={false} size={"lg"}>
             <ModalBody>
                 <ScenarioPicker />
-                <GameDifficulty setDifficulty={setDifficulty}/>
+                <GameDifficulty difficulty={difficulty} setDifficulty={setDifficulty}/>
                 <Opponents />
                 <HeroClass />
             </ModalBody>
