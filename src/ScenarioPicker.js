@@ -7,12 +7,12 @@ import ShowScenarios from './ShowScenarios';
 
 export default function Scenario(){
     const [showScenarios, toggleShowScenarios] = useReducer(showScenarios => !showScenarios, false);
-    const scenarioName = useSelector(getScenarioName);   
+    const scenarioName = useSelector(getScenarioName);
 
     return (
         <>
         <div className="text-center">Scenario:</div>
-        <Row>
+        <Row className="bordered">
             <Col></Col>
             <Col className="d-flex justify-content-center align-items-center">{scenarioName}</Col>
             <Col className="d-flex justify-content-end"><Button onClick={toggleShowScenarios}>SELECT</Button></Col>
