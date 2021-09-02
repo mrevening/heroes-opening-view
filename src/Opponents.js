@@ -1,5 +1,5 @@
 import { useSelector } from 'react-redux';
-import { ButtonGroup } from 'reactstrap';
+import { Container, List, ListInlineItem } from 'reactstrap';
 import { getScenarioOpponents } from './selectors';
 import OpponentsButton from './OpponentsButton';
 
@@ -7,9 +7,18 @@ export default function Opponents(){
     const opponents = useSelector(getScenarioOpponents);
     return(
         <>
-        <ButtonGroup>
-            { opponents?.map((op, i) => <OpponentsButton color={op.color} onlyComputer={op.onlyComputer} key={i}/> ) }
-        </ButtonGroup>
+        <Container className="text-center">
+            <div>Opponents:</div>
+            <div>
+                <List type="inline">
+                { opponents.map((op, i) => { return(
+                    <ListInlineItem key={i}>
+                        <OpponentsButton color={op.color} castle={op.castle} blocked={op.blocked} human={op.human}/>
+                    </ListInlineItem>
+                )})}
+                </List>
+            </div>
+        </Container>
         </>
     );
 }

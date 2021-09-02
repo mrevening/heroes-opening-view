@@ -1,7 +1,7 @@
 import 'bootstrap/dist/css/bootstrap.css';import React, { useState, useEffect } from 'react';
 import { setScenarios, setScenarioSettings } from './actions';
 import { useDispatch } from 'react-redux';
-import { Button, Modal, ModalBody, ModalFooter } from 'reactstrap';
+import { Button, Modal, ModalBody, ModalFooter, Row, Col } from 'reactstrap';
 import ScenarioPicker from './ScenarioPicker';
 import GameDifficulty from './GameDifficulty';
 import HeroClass from './HeroClass';
@@ -23,12 +23,12 @@ function NewGameView({ isOpen, toggle }) {
                 <GameDifficulty difficulty={difficulty} setDifficulty={setDifficulty}/>
                 <Opponents />
                 <HeroClass />
+                <Row className="d-flex justify-content-center align-items-center text-center">
+                    <Col><Button color="primary" onClick={toggle}>OKAY</Button></Col>
+                    <Col><div>{ 100 + difficulty*20 }%</div></Col>
+                    <Col><Button color="secondary" onClick={toggle}>CANCEL</Button></Col>
+                </Row>   
             </ModalBody>
-            <ModalFooter>
-                <div>{ 100 + difficulty*20 }%</div>
-                <Button color="primary" onClick={toggle}>OKAY</Button>{' '}
-                <Button color="secondary" onClick={toggle}>CANCEL</Button>
-            </ModalFooter>
         </Modal>
         </>
     );

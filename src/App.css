@@ -1,6 +1,10 @@
 .red {
   background-color: red;
 }
+.blue {
+  background-color: blue;
+}
+
 .green {
   background-color: green;
 }
@@ -19,7 +23,7 @@
 
 
 .scenario-opponents-button {
-  height: 20px;  width: 20px;;
+  height: 60px;  width: 88px;;
 }
 
 .blocked-button {
@@ -87,4 +91,8 @@ html {
 
 .not-active {
   border: 2px solid transparent;
+}
+
+.bordered {
+  border: 2px solid black;
 }

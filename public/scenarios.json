@@ -4,12 +4,12 @@
         "size": "X-L",
         "opponents": 
         [
-            { "onlyComputer": true,  "color": "blue"},
-            { "onlyComputer": false, "color": "green" },
-            { "onlyComputer": false, "color": "red" },
-            { "onlyComputer": false, "color": "yellow" },
-            { "onlyComputer": false, "color": "orange" },
-            { "onlyComputer": false, "color": "purple" }
+            { "color": "blue", "human": true, "castle": "knight" },
+            { "color": "green", "castle": "barbarian" },
+            { "color": "red" , "blocked": true, "castle": "sorceress"  },
+            { "color": "yellow", "blocked": true, "castle": "wizard"  },
+            { "color": "orange", "castle": "warlock" },
+            { "color": "purple", "blocked": true, "castle": "necroman"  }
         ]
     },
     {
@@ -17,8 +17,8 @@
         "size": "S",
         "opponents": 
         [
-            { "onlyComputer": true,  "color": "blue"},
-            { "onlyComputer": false, "color": "green" }
+            { "color": "blue"},
+            { "color": "green" }
         ]
     }
 ]
